@@ -13,6 +13,7 @@ btn.addEventListener("click", () => {
     music.play();
     music.loop = true;
     btn.style.display = "none"; // ocultar botón después de iniciar
+    changeTextContent(); // iniciar el cambio de texto
 });
 
 function changeTextContent() {
@@ -26,4 +27,3 @@ function changeTextContent() {
     }, 3000); // 3 segundos
 }
 
-changeTextContent();

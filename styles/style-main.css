@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: url(./images/fondo-happy.jpg);
+    background-image: url(../images/fondo-happy.jpg);
     background-position: center;
     background-repeat: repeat;
     background-attachment: fixed;

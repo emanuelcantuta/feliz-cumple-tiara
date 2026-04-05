@@ -157,3 +157,28 @@ footer {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7); /* Agregamos un fondito sutil para que se lea mejor en móviles */
 }
+
+/*estilos especificos para celu*/
+@media (max-width: 600px) {
+    /* Achicamos el título principal */
+    main header h1 {
+        font-size: 1.5rem; 
+    }
+
+    /* Achicamos el texto que va cambiando */
+    .target h2 {
+        font-size: 1.3rem; 
+        margin-bottom: 10px; /* Reducimos un poco el espacio debajo también */
+    }
+
+    /* Achicamos la letra y el relleno del botón para que no ocupe tanto */
+    #playBtn {
+        font-size: 1.1rem; 
+        padding: 12px 25px; 
+    }
+    
+    /* Achicamos los enlaces del menú superior */
+    a {
+        font-size: 0.9rem;
+    }
+}

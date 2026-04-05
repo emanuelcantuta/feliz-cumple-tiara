@@ -15,7 +15,6 @@ const textToChange = [
 let intervalId; 
 let textoIniciado = false; 
 
-// Al darle click a INICIAR (o reanudar)
 btn.addEventListener("click", () => {
     music.play();
     music.loop = true;
@@ -54,7 +53,7 @@ function iniciarCambioDeTexto() {
             if (i === textToChange.length - 1) {
                 lanzarConfeti();
             }
-        }, 300); 
+        }, 500); 
         
     }, 3500); 
 }

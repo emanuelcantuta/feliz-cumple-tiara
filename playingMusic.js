@@ -24,6 +24,7 @@ offBtn.addEventListener("click", () => {
     music.pause();
     music.currentTime = 0; // reiniciar la música al principio
     btn.style.display = "inline-block"; // mostrar botón de iniciar
+    changeTextContent(); // reiniciar el cambio de texto
     offBtn.style.display = "none"; // ocultar botón de detener
 });
 

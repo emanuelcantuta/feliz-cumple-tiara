@@ -97,6 +97,7 @@ music.addEventListener("timeupdate", () => {
     }
 });
 
+// reinciar canción desde el principio
 restartBtn.addEventListener("click", () => {
     music.currentTime = 0;
     if (music.paused) {

@@ -37,6 +37,7 @@ ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap; 
     gap: 15px; /* Define un espacio parejo entre los enlaces */
 }

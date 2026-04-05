@@ -1,0 +1,80 @@
+:root {
+    --color-border: #e17eb9;
+    --color-title-target: #6c2abb;
+    color-scheme: light;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./images/fondo-happy.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    min-height: 100vh; 
+}
+
+.header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 15px; /* Define un espacio parejo entre los enlaces */
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    /* Eliminamos el margin-right porque ahora usamos 'gap' en el ul */
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-align: center; /* Ayuda a que los enlaces se centren en móviles */
+}
+
+/* CAMBIO: Agregamos estilos directos a 'main' para asegurar que centre todo en móviles */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px; /* Evita que el contenido toque los bordes del celular */
+}
+
+footer {
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Agregamos un fondito sutil para que se lea mejor en móviles */
+}
+
+/*estilos especificos para celu*/
+@media (max-width: 600px) {
+    /* Achicamos los enlaces del menú superior */
+    a {
+        font-size: 0.9rem;
+    }
+}

@@ -12,58 +12,51 @@ const textToChange = [
     "Espero que nos sigamos conociendo y compartiendo momentos juntos.😭"
 ];
 
-// Variable para guardar el reloj y poder detenerlo
 let intervalId; 
+let textoIniciado = false; 
 
+// Al darle click a INICIAR (o reanudar)
 btn.addEventListener("click", () => {
     music.play();
     music.loop = true;
+    
     btn.style.display = "none"; 
     offBtn.style.display = "inline-block"; 
-    iniciarCambioDeTexto(); 
+    
+    if (!textoIniciado) {
+        iniciarCambioDeTexto(); 
+        textoIniciado = true; // Marcamos que ya empezó
+    }
 });
 
+// Al darle click a APAGAR
 offBtn.addEventListener("click", () => {
     music.pause();
-    music.currentTime = 0; 
     btn.style.display = "inline-block"; 
     offBtn.style.display = "none"; 
-    
-    // Detenemos el reloj para que no se duplique
-    clearInterval(intervalId);
-    
-    // Dejamos el texto visible y con el mensaje de bienvenida original
-    changeText.classList.remove("fade-out");
-    changeText.textContent = "¡Que tengas un bonito cumple tiara:D!";
 });
 
 function iniciarCambioDeTexto() {
-    let i = -1; // Empezamos en -1 para que el primer cambio sea el índice 0
+    let i = -1; 
     
     intervalId = setInterval(() => {
-        // 1. Hacemos el texto transparente
         changeText.classList.add("fade-out");
         
-        // 2. Esperamos medio segundo (500ms) mientras se hace invisible
         setTimeout(() => {
             i++;
             if (i >= textToChange.length) {
                 i = 0; 
             }
             
-            // 3. Cambiamos el texto estando invisible
             changeText.textContent = textToChange[i];
-            
-            // 4. Volvemos a hacer visible el texto
             changeText.classList.remove("fade-out");
             
-            // Lanzamos el confeti en la última frase
             if (i === textToChange.length - 1) {
                 lanzarConfeti();
             }
-        }, 500); 
+        }, 300); 
         
-    }, 3500); // Repetimos todo el proceso cada 3.5 segundos
+    }, 3500); 
 }
 
 function lanzarConfeti() {

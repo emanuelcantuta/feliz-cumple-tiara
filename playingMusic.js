@@ -12,41 +12,65 @@ const textToChange = [
     "Espero que nos sigamos conociendo y compartiendo momentos juntos.😭"
 ];
 
+// Variable para guardar el reloj y poder detenerlo
+let intervalId; 
+
 btn.addEventListener("click", () => {
     music.play();
     music.loop = true;
-    btn.style.display = "none"; // ocultar botón después de iniciar
-    changeTextContent(); // iniciar el cambio de texto
-    offBtn.style.display = "inline-block"; // mostrar botón de detener
+    btn.style.display = "none"; 
+    offBtn.style.display = "inline-block"; 
+    iniciarCambioDeTexto(); 
 });
 
 offBtn.addEventListener("click", () => {
     music.pause();
-    music.currentTime = 0; // reiniciar la música al principio
-    btn.style.display = "inline-block"; // mostrar botón de iniciar
-    changeTextContent(); // reiniciar el cambio de texto
-    offBtn.style.display = "none"; // ocultar botón de detener
+    music.currentTime = 0; 
+    btn.style.display = "inline-block"; 
+    offBtn.style.display = "none"; 
+    
+    // Detenemos el reloj para que no se duplique
+    clearInterval(intervalId);
+    
+    // Dejamos el texto visible y con el mensaje de bienvenida original
+    changeText.classList.remove("fade-out");
+    changeText.textContent = "¡Que tengas un bonito cumple tiara:D!";
 });
 
-function changeTextContent() {
-    let i = 0;
-    setInterval(() => {
-        i++;
-        if (i >= textToChange.length) {
-            i = 0; // reiniciar el índice para repetir los mensajes
-        }
-        changeText.textContent = textToChange[i];
-        if (i === textToChange.length - 1) {
-            lanzarConfeti();
-        }
-    }, 3000); 
+function iniciarCambioDeTexto() {
+    let i = -1; // Empezamos en -1 para que el primer cambio sea el índice 0
+    
+    intervalId = setInterval(() => {
+        // 1. Hacemos el texto transparente
+        changeText.classList.add("fade-out");
+        
+        // 2. Esperamos medio segundo (500ms) mientras se hace invisible
+        setTimeout(() => {
+            i++;
+            if (i >= textToChange.length) {
+                i = 0; 
+            }
+            
+            // 3. Cambiamos el texto estando invisible
+            changeText.textContent = textToChange[i];
+            
+            // 4. Volvemos a hacer visible el texto
+            changeText.classList.remove("fade-out");
+            
+            // Lanzamos el confeti en la última frase
+            if (i === textToChange.length - 1) {
+                lanzarConfeti();
+            }
+        }, 500); 
+        
+    }, 3500); // Repetimos todo el proceso cada 3.5 segundos
 }
 
 function lanzarConfeti() {
     confetti({
-        particleCount: 150, // Cantidad de papelitos
-        spread: 80,         // Qué tan amplio será el estallido
-        origin: { y: 0.6 }, // Desde dónde sale (0.6 es un poco más abajo de la mitad de la pantalla)
-        colors: ['#e17eb9', '#6c2abb', '#ffffff'] // Usamos los colores de tu diseño CSS
+        particleCount: 150, 
+        spread: 80,         
+        origin: { y: 0.6 }, 
+        colors: ['#e17eb9', '#6c2abb', '#ffffff'] 
     });
 }

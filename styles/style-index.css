@@ -89,6 +89,24 @@ main header {
     max-width: 100%; 
 }
 
+#offBtn {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 300% 300%;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    animation: gradientMove 5s ease infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* CAMBIO: Previene que el botón se desborde si la pantalla es muy chiquita */
+    max-width: 100%;
+}
+
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -110,6 +128,11 @@ main header {
 
     /* Achicamos la letra y el relleno del botón para que no ocupe tanto */
     #playBtn {
+        font-size: 1.1rem; 
+        padding: 12px 25px; 
+    }
+
+    #offBtn {
         font-size: 1.1rem; 
         padding: 12px 25px; 
     }

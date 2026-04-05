@@ -3,6 +3,7 @@ import confetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/+esm';
 const btn = document.getElementById("playBtn");
 const music = document.getElementById("bgMusic");
 const changeText = document.querySelector(".change-text");
+const offBtn = document.getElementById("offBtn");
 
 const textToChange = [
     "¡Espero que disfrutes la música y tengas un día increíble!",
@@ -16,6 +17,14 @@ btn.addEventListener("click", () => {
     music.loop = true;
     btn.style.display = "none"; // ocultar botón después de iniciar
     changeTextContent(); // iniciar el cambio de texto
+    offBtn.style.display = "inline-block"; // mostrar botón de detener
+});
+
+offBtn.addEventListener("click", () => {
+    music.pause();
+    music.currentTime = 0; // reiniciar la música al principio
+    btn.style.display = "inline-block"; // mostrar botón de iniciar
+    offBtn.style.display = "none"; // ocultar botón de detener
 });
 
 function changeTextContent() {

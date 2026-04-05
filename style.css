@@ -20,7 +20,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
+    
+    min-height: 100vh; 
 }
 
 .header {
@@ -35,75 +36,94 @@ ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 15px; /* Define un espacio parejo entre los enlaces */
 }
 
 li {
     list-style: none;
     display: inline-block;
-    margin-right: 20px;
+    /* Eliminamos el margin-right porque ahora usamos 'gap' en el ul */
 }
 
 a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    text-align: center; /* Ayuda a que los enlaces se centren en móviles */
+}
+
+/* CAMBIO: Agregamos estilos directos a 'main' para asegurar que centre todo en móviles */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px; /* Evita que el contenido toque los bordes del celular */
 }
 
 main header {
-    width: 420px;
+    /* CAMBIO: Ancho dinámico que se adapta a cualquier pantalla */
+    width: 90%; 
+    max-width: 420px; /* Tope máximo para que no se vea gigante en PC */
+    
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border: 3px solid var(--color-border);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centramos el título */
 }
 
 .target {
-  width: 420px;
-  background: #ffffff; /* fondo blanco */
-  border: 3px solid var(--color-border); /* borde festivo rosa */
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  padding: 20px;
-  text-align: center;
-  margin: 40px auto;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  color: #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* CAMBIO: Misma técnica de ancho dinámico que el header */
+    width: 90%; 
+    max-width: 420px; 
+    
+    background: #ffffff;
+    border: 3px solid var(--color-border);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    padding: 20px;
+    text-align: center;
+    margin: 30px auto; /* Un poco de respiro entre cajas */
+    font-family: Arial, sans-serif;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .target h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: var(--color-title-target);
-  font-style: italic;
-  text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--color-title-target);
+    font-style: italic;
+    text-align: center;
 }
 
 .target img {
-  border-radius: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  width: 100%;
-  height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 100%; /* Perfecto, esto ya hace que la imagen sea responsiva */
+    height: auto;
 }
 
 .target button {
-  background: linear-gradient(135deg, var(--color-border), #7873f5);
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: linear-gradient(135deg, var(--color-border), #7873f5);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .target button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 #playBtn {
@@ -119,8 +139,10 @@ main header {
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     animation: gradientMove 5s ease infinite;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* CAMBIO: Previene que el botón se desborde si la pantalla es muy chiquita */
+    max-width: 100%; 
 }
-
 
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
@@ -130,7 +152,8 @@ main header {
 
 footer {
     width: 100%;
-    margin-top: 20px;
+    padding: 20px 10px;
     font-size: 0.9rem;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Agregamos un fondito sutil para que se lea mejor en móviles */
 }

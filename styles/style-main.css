@@ -78,4 +78,8 @@ footer {
     a {
         font-size: 0.9rem;
     }
+
+    #restartBtn {
+        font-size: 0.9rem;
+    }
 }

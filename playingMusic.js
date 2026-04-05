@@ -1,3 +1,5 @@
+import confetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/+esm';
+
 const btn = document.getElementById("playBtn");
 const music = document.getElementById("bgMusic");
 const changeText = document.querySelector(".change-text");
@@ -24,6 +26,17 @@ function changeTextContent() {
             i = 0; // reiniciar el índice para repetir los mensajes
         }
         changeText.textContent = textToChange[i];
-    }, 3000); // 3 segundos
+        if (i === textToChange.length - 1) {
+            lanzarConfeti();
+        }
+    }, 3000); 
 }
 
+function lanzarConfeti() {
+    confetti({
+        particleCount: 150, // Cantidad de papelitos
+        spread: 80,         // Qué tan amplio será el estallido
+        origin: { y: 0.6 }, // Desde dónde sale (0.6 es un poco más abajo de la mitad de la pantalla)
+        colors: ['#e17eb9', '#6c2abb', '#ffffff'] // Usamos los colores de tu diseño CSS
+    });
+}

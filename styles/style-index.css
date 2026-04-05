@@ -112,6 +112,17 @@ main header {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+/* estilos para el texto cambiante*/
+.change-text {
+    /* Le decimos que cualquier cambio de visibilidad tarde 0.5 segundos y sea fluido */
+    transition: opacity 0.5s ease; 
+    opacity: 1; /* Totalmente visible por defecto */
+}
+
+/* Esta clase la pondremos y quitaremos con JavaScript */
+.fade-out {
+    opacity: 0; /* Totalmente transparente */
+}
 
 /*estilos especificos para celu*/
 @media (max-width: 600px) {

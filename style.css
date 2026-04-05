@@ -1,6 +1,7 @@
 :root {
     --color-border: #e17eb9;
     --color-title-target: #6c2abb;
+    color-scheme: light;
 }
 
 * {

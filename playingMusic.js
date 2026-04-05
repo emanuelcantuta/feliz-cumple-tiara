@@ -22,7 +22,7 @@ btn.addEventListener("click", () => {
     btn.style.display = "none"; 
     offBtn.style.display = "inline-block"; 
     
-    if (!textoIniciado) {
+    if (!textoIniciado) { // -> si es el textoIniciado 
         iniciarCambioDeTexto(); 
         textoIniciado = true; // Marcamos que ya empezó
     }
@@ -55,7 +55,7 @@ function iniciarCambioDeTexto() {
             }
         }, 500); 
         
-    }, 3500); 
+    }, 3000); 
 }
 
 function lanzarConfeti() {

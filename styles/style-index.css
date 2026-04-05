@@ -122,6 +122,16 @@ main header {
     opacity: 0; /* Totalmente transparente */
 }
 
+.lyrics-text {
+    font-size: 1.1rem;
+    color: #ff7e67; /* Un color cálido como el sol */
+    font-weight: bold;
+    min-height: 1.5rem; /* Evita que la pantalla salte cuando no hay letra */
+    margin-bottom: 15px;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
 /*estilos especificos para celu*/
 @media (max-width: 600px) {
     /* Achicamos el título principal */

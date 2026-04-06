@@ -1,3 +1,7 @@
+html {
+    color-scheme: light;
+}
+
 body {
     background-image: url(../images/fondo-happy.jpg);
     background-position: center;

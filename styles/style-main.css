@@ -1,7 +1,6 @@
 :root {
     --color-border: #e17eb9;
     --color-title-target: #6c2abb;
-    color-scheme: light;
 }
 
 * {
@@ -30,20 +29,19 @@ ul {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap; 
-    gap: 15px; /* Define un espacio parejo entre los enlaces */
+    gap: 15px;
 }
 
 li {
     list-style: none;
     display: inline-block;
-    /* Eliminamos el margin-right porque ahora usamos 'gap' en el ul */
 }
 
 a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    text-align: center; /* Ayuda a que los enlaces se centren en móviles */
+    text-align: center;
 }
 
 
@@ -52,12 +50,11 @@ footer {
     padding: 20px 10px;
     font-size: 0.9rem;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7); /* Agregamos un fondito sutil para que se lea mejor en móviles */
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /*estilos especificos para celu*/
 @media (max-width: 600px) {
-    /* Achicamos los enlaces del menú superior */
     a {
         font-size: 0.9rem;
     }
@@ -68,6 +65,6 @@ footer {
 
     ul {
         flex-direction: column;
-        gap: 10px; /* Reducimos un poco el espacio entre enlaces en móviles */
+        gap: 10px;
     }
 }

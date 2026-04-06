@@ -1,4 +1,13 @@
 body {
     background-image: url(../images/juego-fondo.png);
-    background-position: center;
+    background-size: contain;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
 }

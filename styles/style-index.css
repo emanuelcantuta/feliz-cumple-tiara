@@ -1,4 +1,10 @@
-/* CAMBIO: Agregamos estilos directos a 'main' para asegurar que centre todo en móviles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 main {
     width: 100%;
     display: flex;
@@ -8,9 +14,8 @@ main {
 }
 
 main header {
-    /* CAMBIO: Ancho dinámico que se adapta a cualquier pantalla */
     width: 90%; 
-    max-width: 420px; /* Tope máximo para que no se vea gigante en PC */
+    max-width: 420px;
     
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -21,7 +26,6 @@ main header {
 }
 
 .target {
-    /* CAMBIO: Misma técnica de ancho dinámico que el header */
     width: 90%; 
     max-width: 420px; 
     

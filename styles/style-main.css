@@ -82,4 +82,9 @@ footer {
     #restartBtn {
         font-size: 0.9rem;
     }
+
+    ul {
+        flex-direction: column;
+        gap: 10px; /* Reducimos un poco el espacio entre enlaces en móviles */
+    }
 }

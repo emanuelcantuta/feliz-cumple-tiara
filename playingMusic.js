@@ -58,7 +58,8 @@ let textoIniciado = false;
 btn.addEventListener("click", () => {
     music.play();
     music.loop = true;
-    
+    restartBtn.disabled = false;
+
     btn.style.display = "none"; 
     offBtn.style.display = "inline-block"; 
     
@@ -74,6 +75,7 @@ offBtn.addEventListener("click", () => {
     
     btn.style.display = "inline-block"; 
     offBtn.style.display = "none"; 
+    restartBtn.disabled = true;
 });
 
 // NUEVO: Escuchar el tiempo de la canción en vivo

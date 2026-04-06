@@ -11,13 +11,12 @@
 }
 
 body {
-    background-image: url(../images/fondo-happy.jpg);
+    background-image: url(../images/juego-fondo.png);
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     font-size: 16px;
-    
     min-height: 100vh; 
 }
 

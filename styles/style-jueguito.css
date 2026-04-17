@@ -9,6 +9,14 @@ main {
     flex: 1;
 }
 
+.display-game {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
 img {
     user-select: none;
     position: absolute;

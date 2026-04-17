@@ -1,6 +1,12 @@
 body {
     background-image: url(../images/juego-fondo.png);
     background-size: contain;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 @media (max-width: 600px) {

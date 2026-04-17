@@ -3,7 +3,6 @@ const img = document.querySelector("img");
 
 img.src = "./images/globo.png";
 game.appendChild(img);
-
 img.addEventListener("click", moverImagen);
 
 function moverImagen() {

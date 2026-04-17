@@ -9,6 +9,13 @@ main {
     flex: 1;
 }
 
+img {
+    user-select: none;
+    position: absolute;
+
+}
+
+
 @media (max-width: 600px) {
     body {
         background-position: center;

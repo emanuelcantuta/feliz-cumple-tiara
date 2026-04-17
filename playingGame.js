@@ -1,8 +1,10 @@
 const game = document.getElementById("gameArea");
-const img = document.createElement("img");
+const img = document.querySelector("img");
 
-img.src = "globo.png";
+img.src = "./images/globo.png";
 game.appendChild(img);
+
+img.addEventListener("click", moverImagen);
 
 function moverImagen() {
   const gameWidth = game.clientWidth;
@@ -19,5 +21,3 @@ function moverImagen() {
 }
 
 setInterval(moverImagen, 3000);
-
-moverImagen();

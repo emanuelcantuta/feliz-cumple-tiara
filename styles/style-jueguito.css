@@ -12,9 +12,16 @@ main {
 img {
     user-select: none;
     position: absolute;
-
 }
 
+#startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 @media (max-width: 600px) {
     body {

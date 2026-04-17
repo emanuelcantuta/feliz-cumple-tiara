@@ -1,9 +1,44 @@
-const game = document.getElementById("gameArea");
-const img = document.querySelector("img");
+const $ = (selector) => document.querySelector(selector);
+
+const game = $("#gameArea");
+const img = $("img");
+const contador = $(".contador");
+const tiempo = $(".tiempo");
 
 img.src = "./images/globo.png";
 game.appendChild(img);
-img.addEventListener("click", moverImagen);
+
+const startButton = $("#startButton");
+startButton.addEventListener("click", iniciarJuego);
+
+let score = 0;
+let timeLeft = 15;
+let juegoActivo = false;
+let intervaloTiempo;
+
+img.addEventListener("click", () => {  
+  if (juegoActivo === false) return; 
+  score++;
+  contador.textContent = `Contador de globos atrapados: ${score}`;
+  moverImagen();
+});
+
+function iniciarJuego() {
+  if (juegoActivo === true) return; 
+  
+  juegoActivo = true;
+  valuesDefault();
+  moverImagen();
+  contadorTiempo();
+}
+
+function valuesDefault() {
+  score = 0;
+  timeLeft = 15;
+
+  contador.textContent = `Contador de globos atrapados: ${score}`;
+  tiempo.textContent = `Tiempo restante: ${timeLeft}`;
+}
 
 function moverImagen() {
   const gameWidth = game.clientWidth;
@@ -19,4 +54,19 @@ function moverImagen() {
   img.style.top = randomY + "px";
 }
 
-setInterval(moverImagen, 3000);
+function contadorTiempo() {
+  clearInterval(intervaloTiempo); 
+
+  intervaloTiempo = setInterval(() => {
+    if(timeLeft > 0) {
+      timeLeft--;
+      tiempo.textContent = `Tiempo restante: ${timeLeft}`;
+    } else {
+      clearInterval(intervaloTiempo);
+      juegoActivo = false;
+      
+      alert(`¡Tiempo terminado! Atrapaste ${score} globos.`);
+      valuesDefault();
+    }
+  }, 1000);
+}

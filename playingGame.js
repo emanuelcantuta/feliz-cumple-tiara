@@ -6,7 +6,6 @@ const tiempo = $(".tiempo");
 
 const  img = document.createElement("img");
 img.src = "./images/globo.png";
-img.width = 100;
 
 
 const startButton = $("#startButton");

@@ -5,7 +5,6 @@ const img = $("img");
 const contador = $(".contador");
 const tiempo = $(".tiempo");
 
-img.src = "./images/globo.png";
 game.appendChild(img);
 
 const startButton = $("#startButton");

@@ -7,6 +7,8 @@ body {
 
 main {
     flex: 1;
+    display: grid;
+    place-items: center;
 }
 
 .display-game {
@@ -21,6 +23,7 @@ main {
 img {
     user-select: none;
     position: absolute;
+    cursor: pointer;
 }
 
 #startButton {

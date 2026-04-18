@@ -1,22 +1,24 @@
 const $ = (selector) => document.querySelector(selector);
 
 const game = $("#gameArea");
-const img = $("img");
 const contador = $(".contador");
 const tiempo = $(".tiempo");
 
-game.appendChild(img);
+const  img = document.createElement("img");
+img.src = "./images/globo.png";
+img.width = 100;
+
 
 const startButton = $("#startButton");
 startButton.addEventListener("click", iniciarJuego);
 
-let score = 0;
-let timeLeft = 15;
+let score;
+let timeLeft;
 let juegoActivo = false;
 let intervaloTiempo;
 
 img.addEventListener("click", () => {  
-  if (juegoActivo === false) return; 
+  if (juegoActivo === false) return;
   score++;
   contador.textContent = `Contador de globos atrapados: ${score}`;
   moverImagen();
@@ -27,6 +29,7 @@ function iniciarJuego() {
   
   juegoActivo = true;
   valuesDefault();
+  game.appendChild(img);
   moverImagen();
   contadorTiempo();
 }
@@ -34,7 +37,6 @@ function iniciarJuego() {
 function valuesDefault() {
   score = 0;
   timeLeft = 15;
-
   contador.textContent = `Contador de globos atrapados: ${score}`;
   tiempo.textContent = `Tiempo restante: ${timeLeft}`;
 }
@@ -54,8 +56,6 @@ function moverImagen() {
 }
 
 function contadorTiempo() {
-  clearInterval(intervaloTiempo); 
-
   intervaloTiempo = setInterval(() => {
     if(timeLeft > 0) {
       timeLeft--;
@@ -63,9 +63,10 @@ function contadorTiempo() {
     } else {
       clearInterval(intervaloTiempo);
       juegoActivo = false;
-      
-      alert(`¡Tiempo terminado! Atrapaste ${score} globos.`);
-      valuesDefault();
+      img.remove(); 
+      setTimeout(() => {
+        alert(`¡Tiempo terminado! Atrapaste ${score} globos.`);
+      }, 10);
     }
   }, 1000);
 }

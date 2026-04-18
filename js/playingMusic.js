@@ -1,11 +1,12 @@
+import $ from "./utils.js";
 import confetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/+esm';
 
-const btn = document.getElementById("playBtn");
-const music = document.getElementById("bgMusic");
-const changeText = document.querySelector(".change-text");
-const offBtn = document.getElementById("offBtn");
-const lyricsDisplay = document.getElementById("lyricsDisplay"); // Seleccionamos la pantalla de letras
-const restartBtn = document.getElementById("restartBtn"); // Botón para reiniciar la canción
+const btn = $("#playBtn");
+const music = $("#bgMusic");
+const changeText = $(".change-text");
+const offBtn = $("#offBtn");
+const lyricsDisplay = $("#lyricsDisplay"); // Seleccionamos la pantalla de letras
+const restartBtn = $("#restartBtn"); // Botón para reiniciar la canción
 
 const textToChange = [
     "¡Espero que disfrutes la música y tengas un día increíble!",

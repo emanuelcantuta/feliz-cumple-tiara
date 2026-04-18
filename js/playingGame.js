@@ -1,4 +1,4 @@
-const $ = (selector) => document.querySelector(selector);
+import $ from "./utils.js";
 
 const game = $("#gameArea");
 const contador = $(".contador");

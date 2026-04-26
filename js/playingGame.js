@@ -7,7 +7,6 @@ const tiempo = $(".tiempo");
 const  img = document.createElement("img");
 img.src = "./images/globo.png";
 
-
 const startButton = $("#startButton");
 startButton.addEventListener("click", iniciarJuego);
 

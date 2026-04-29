@@ -16,7 +16,7 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     text-align: center;
 }
 
@@ -34,6 +34,11 @@ img {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    border: 2px solid transparent;
+}
+
+#startButton:hover {
+    border: 2px solid rgba(217, 217, 217, 0.809);
 }
 
 @media (max-width: 600px) {

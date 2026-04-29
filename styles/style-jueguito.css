@@ -38,7 +38,7 @@ img {
 }
 
 #startButton:hover {
-    border: 2px solid rgba(217, 217, 217, 0.809);
+    border: 2px solid rgba(217, 217, 217);
 }
 
 @media (max-width: 600px) {
